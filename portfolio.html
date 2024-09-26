@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannah's Portfolio</title>
+    <style>
+        /* Ensuring the entire page takes up full height */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f8e2e2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Flex container to make the main section grow and push the footer down */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        footer {
+            background-color: #ffccd5; /* Matching footer with header */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1, footer p {
+            margin: 0;
+            color: #333; /* Dark gray text */
+        }
+
+        main {
+            padding: 50px 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #ff6b81; /* Bright pink for headings */
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #706d6d; /* Light gray for subheading */
+        }
+
+        .project-button {
+            background-color: transparent;
+            border: none; /* No border */
+            padding: 10px; /* Adjust padding to fit the icon */
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50%; /* Make it circular */
+            transition: all 0.3s ease;
+            display: flex; /* Use flexbox to center icon and label */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            text-decoration: none; /* Remove underline from the link */
+        }
+
+        .icon {
+            width: 70px; /* Adjust width as needed */
+            height: 70px; /* Adjust height as needed */
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
+        }
+
+        .label {
+            margin-top: 5px; /* Space between icon and label */
+            font-size: 14px; /* Adjust label font size */
+            color: #333; /* Dark gray color for the label */
+        }
+
+        .project-button:hover .icon {
+            transform: scale(1.2); /* Increase size by 20% on hover */
+        }
+
+        footer {
+            font-size: 10px; /* Adjusted font size */
+            border-top: 1px solid #ff6b81; /* Pink border line */
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        /* Flex container for buttons */
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            flex-wrap: wrap; /* Allow buttons to wrap if needed */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2><b>HI. I AM JANNAH IBARONDO!</b></h2>
+        <h3>Check out my projects and see how my creativity unfolds throughout my work!</h3>
+        <div class="button-container">
+            <a href="activity4.html" class="project-button">
+                <img src="images/folder.png" alt="Activity 1 Icon" class="icon">
+                <span class="label">Activity 1</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 2 Icon" class="icon">
+                <span class="label">Activity 2</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 3 Icon" class="icon">
+                <span class="label">Activity 3</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 4 Icon" class="icon">
+                <span class="label">Activity 4</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jannah's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
