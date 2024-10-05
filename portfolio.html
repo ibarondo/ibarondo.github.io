@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannah's Portfolio</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f8e2e2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        footer {
+            background-color: #ffccd5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1, footer p {
+            margin: 0;
+            color: #333;
+        }
+
+        main {
+            padding: 50px 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #ff6b81;
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #706d6d;
+        }
+
+        .project-button {
+            background-color: transparent;
+            border: none; 
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50%; 
+            transition: all 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-decoration: none; 
+        }
+
+        .icon {
+            width: 70px; 
+            height: 70px; 
+            transition: transform 0.3s ease; 
+        }
+
+        .label {
+            margin-top: 5px; 
+            font-size: 14px;
+            color: #333; 
+        }
+
+        .project-button:hover .icon {
+            transform: scale(1.2); 
+        }
+
+        footer {
+            font-size: 10px; 
+            border-top: 1px solid #ff6b81; 
+            padding-top: 15px;
+            text-align: center;
+        }
+
+       
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2><b>HI. I AM JANNAH IBARONDO!</b></h2>
+        <h3>Check out my projects and see how my creativity unfolds throughout my work!</h3>
+        <div class="button-container">
+            <a href="project1/showcase.html" class="project-button">
+                <img src="images/folder.png" alt="Activity 1 Icon" class="icon">
+                <span class="label">Activity 1</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 2 Icon" class="icon">
+                <span class="label">Activity 2</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 3 Icon" class="icon">
+                <span class="label">Activity 3</span>
+            </a>
+            <a href="#" class="project-button">
+                <img src="images/folder.png" alt="Activity 4 Icon" class="icon">
+                <span class="label">Activity 4</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jannah's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
