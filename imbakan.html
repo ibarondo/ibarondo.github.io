@@ -1,0 +1,263 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#continentsNav"
+            aria-controls="continentsNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="continentsNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="#" onclick="showCountries('Asia')">Asia</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="#" onclick="showCountries('Africa')">Africa</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="#" onclick="showCountries('NorthAmerica')">North America</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="row mt-4 mx-auto" id="cardContainer"></div>
+
+<script>
+    const countryData = {
+        Asia: [
+            { name: "China", pic: "pictures/china.jpg" },
+            { name: "India", pic: "pictures/india.jpg" },
+            { name: "Japan", pic: "pictures/japan.jpg" },
+            { name: "China", pic: "pictures/china.jpg" },
+            { name: "India", pic: "pictures/india.jpg" },
+            { name: "Japan", pic: "pictures/japan.jpg" },
+            // Add more countries here (up to 48)
+        ],
+        Africa: [
+            { name: "Nigeria", pic: "pictures/nigeria.jpg" },
+            { name: "Kenya", pic: "pictures/kenya.jpg" },
+            { name: "Kenya", pic: "pictures/kenya.jpg" },
+            // Add more countries here
+        ],
+        NorthAmerica: [
+            { name: "Nigeria", pic: "pictures/nigeria.jpg" },
+            { name: "Kenya", pic: "pictures/kenya.jpg" },
+            { name: "Kenya", pic: "pictures/kenya.jpg" },
+        ]
+        // Add other continents similarly
+    };
+
+    function showCountries(continent) {
+        const myContainer = document.getElementById("cardContainer");
+        myContainer.innerHTML = ""; // Clear previous cards
+
+        // Use a for loop to iterate through the countries of the selected continent
+        for (let i = 0; i < countryData[continent].length; i++) {
+            const country = countryData[continent][i];
+            myContainer.innerHTML += `
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                    <div class="card my-3" id="c${i}">
+                        <img src="${country.pic}" class="card-img-top" alt="${country.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${country.name}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>`;
+        }
+    }
+</script>
+
+{ name: "Kazakhstan", pic: "images/asia/kz.png" },
+                { name: "Kyrgyzstan", pic: "images/asia/kg.png" },
+                { name: "Tajikistan", pic: "images/asia/tj.png" },
+                { name: "Turkmenistan", pic: "images/asia/tm.png" },
+                { name: "Uzbekistan", pic: "images/asia/uz.png" },
+                { name: "China", pic: "images/asia/cn.png" },
+                { name: "Japan", pic: "images/asia/jp.png" },
+                { name: "Mongolia", pic: "images/asia/mn.png" },
+                { name: "North Korea", pic: "images/asia/kp.png" },
+                { name: "South Korea", pic: "images/asia/kr.png" },
+                { name: "Taiwan", pic: "images/asia/tw.png" },
+                { name: "Afghanistan", pic: "images/asia/af.png" },
+                { name: "Bangladesh", pic: "images/asia/bd.png" },
+                { name: "Bhutan", pic: "images/asia/bt.png" },
+                { name: "India", pic: "images/asia/in.png" },
+                { name: "Maldives", pic: "images/asia/mv.png" },
+                { name: "Nepal", pic: "images/asia/np.png" },
+                { name: "Pakistan", pic: "images/asia/pk.png" },
+                { name: "Sri Lanka", pic: "images/asia/lk.png" },
+                { name: "Brunei", pic: "images/asia/bn.png" },
+                { name: "Cambodia", pic: "images/asia/kh.png" },
+                { name: "Indonesia", pic: "images/asia/id.png" },
+                { name: "Laos", pic: "images/asia/la.png" },
+                { name: "Malaysia", pic: "images/asia/my.png" },
+                { name: "Myanmar", pic: "images/asia/mm.png" },
+                { name: "Philippines", pic: "images/asia/ph.png" },
+                { name: "Singapore", pic: "images/asia/sg.png" },
+                { name: "Thailand", pic: "images/asia/th.png" },
+                { name: "Timor-Leste", pic: "images/asia/tl.png" },
+                { name: "Vietnam", pic: "images/asia/vn.png" },
+                { name: "Armenia", pic: "images/asia/am.png" },
+                { name: "Azerbaijan", pic: "images/asia/az.png" },
+                { name: "Bahrain", pic: "images/asia/bh.png" },
+                { name: "Cyprus", pic: "images/asia/cy.png" },
+                { name: "Georgia", pic: "images/asia/ge.png" },
+                { name: "Iran", pic: "images/asia/ir.png" },
+                { name: "Iraq", pic: "images/asia/iq.png" },
+                { name: "Israel", pic: "images/asia/il.png" },
+                { name: "Jordan", pic: "images/asia/jo.png" },
+                { name: "Kuwait", pic: "images/asia/kw.png" },
+                { name: "Lebanon", pic: "images/asia/lb.png" },
+                { name: "Oman", pic: "images/asia/om.png" },
+                { name: "Palestine", pic: "images/asia/ps.png" },
+                { name: "Qatar", pic: "images/asia/qa.png" },
+                { name: "Saudi Arabia", pic: "images/asia/sa.png" },
+                { name: "Syria", pic: "images/asia/sy.png" },
+                { name: "Turkey", pic: "images/asia/tr.png" },
+                { name: "United Arab Emirates", pic: "images/asia/ae.png" },
+                { name: "Yemen", pic: "images/asia/ye.png" }
+
+                .navbar-brand,
+                .navbar-nav {
+                    font-family: 'Inter', sans-serif;
+                }
+        
+                .nav-link {
+                    color: #000;
+                    transition: color 0.3s ease, transform 0.3s ease;
+                    font-weight: 700;
+                }
+        
+                .nav-link:hover {
+                    color: #f41a1a;
+                    transform: scale(1);
+        
+                }
+        
+                .hero-section {
+                    position: relative;
+                    height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    color: white;
+                    padding: 20px;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    overflow: hidden;
+                    /* Ensures the video doesn't overflow the section */
+                }
+        
+                .bg-video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: -1;
+                }
+        
+                .hero-section .container {
+                    position: relative;
+                    z-index: 2;
+                }
+        
+                .hero-section h1 {
+                    font-size: 60px;
+                    margin-bottom: 8px;
+                    font-weight: bold;
+                }
+        
+                .hero-section p {
+                    font-size: 15px;
+                    margin-top: 15px;
+                    margin-bottom: 40px;
+                }
+        
+                .btn-custom {
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(1, 1, 1);
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    border-radius: 7px;
+                    transition: all 0.3s ease;
+                }
+        
+                .btn-custom:hover {
+                    transform: scale(1.2);
+                    background-color: white;
+                    color: #000;
+                }
+        
+                .custom-carousel {
+                    margin-top: 20px;
+                    margin-left: 10px;
+                    margin-right: 0;
+                    padding: 10px;
+                }
+        
+                #carousel {
+                    height: 90%;
+                    overflow: hidden;
+                }
+        
+                .carousel-item img {
+                    height: 80%;
+                    width: 80%;
+                    margin: auto;
+                    object-fit: cover;
+                }
+        
+                .mt-4 {
+                    margin-top: 20px;
+                }
+        
+                .mt-4 p,
+                p {
+                    margin-bottom: 17px;
+                    display: block;
+                    margin-block-start: 16px;
+                    margin-block-end: 16px;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    unicode-bidi: isolate;
+                    font-size: 18px;
+                }
+        
+                .mt-4 h2,
+                .title-h2 {
+                    font-size: 30px;
+                    line-height: 1.2;
+                    font-family: 'Lexend', sans-serif;
+                    font-style: normal;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    font-weight: 700;
+                }
+        
+                .top-sights-title {
+                    font-size: 30px;
+                    line-height: 1.2;
+                    font-family: 'Lexend', sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    margin-top: 30px;
+                    margin-bottom: 0%;
+                }
+        
+                .img {
+                    height: 90%;
+                    width: auto;
+                    margin-top: auto;
+                    object-fit: cover;
+                }
+        
+                .card img:hover {
+                    transform: scale(1.1);
+                    transition: transform 0.3s ease;
+                    border-radius: 5px;
+                }
