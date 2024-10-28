@@ -1,0 +1,46 @@
+.card {
+    padding: 20px;
+    text-align: center;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    background-color: rgb(241, 241, 226);
+}
+
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imgcontainer {
+    border-radius: 20px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgcontainer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.countryname {
+    font-weight: bold;
+    font-size: 23px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.countrycode {
+    font-weight: 500;
+    font-size: 15px;
+    color: #555;
+}
+
+.title  {
+    text-decoration: none;
+    color: black;
+}
