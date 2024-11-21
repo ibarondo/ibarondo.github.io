@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-color: #DC586D;
+    --text-color: #333333;
+    --text-color-light: #767268;
+    --extra-light: #ffffff;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--extra-light);
+  }
+  
+  .container {
+    max-width: 400px;
+    padding: 2rem;
+    margin: auto;
+    display: grid;
+    color: var(--text-color);
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  .container h3 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  .container img {
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .footer {
+    display: grid;
+    gap: 2rem;
+    place-content: baseline;
+  }
+  .footer p {
+    font-variation-settings: 1rem;
+  }
+  
+  .footer a {
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: var(--extra-light);
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .footer a:hover {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--text-color);
+  }
+  
+  @media (min-width: 640px) {
+
+    .container {
+      max-width: 1200px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .container img {
+      max-width: 550px;
+      grid-area: 1/1/3/2;
+    }
+    .footer {
+      max-width: 300px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      column-gap: 5rem;
+    }
+    .header h1 {
+      font-size: 6rem;
+    }
+    .header h3 {
+      font-size: 2.5rem;
+    }
+  }

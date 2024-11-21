@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Africa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/globe.ico">
+
+</head>
+
+<body id="body" data-bs-theme="light">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="row w-100">
+                <div class="col-6 d-flex align-items-center">
+                    <a class="navbar-brand d-flex align-items-center" href="gallery.html">
+                        <img src="images/globe.png" alt="Logo" width="40" height="40"
+                            class="d-inline-block align-text-top">
+                        <span class="ms-2" style="line-height: 1.2;"><b>Africa</b></span>
+                    </a>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <button class="btn btn-outline-secondary ms-2" onclick="toggleSidebar()">Continents</button>
+                    <button class="btn btn-outline-secondary ms-2" id="modeButton" onclick="changeMode()"
+                        type="submit">Dark</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <div class="p-3">
+            <ul class="list-unstyled">
+                <li><a href="antarctica.html" class="text-decoration-none">Antarctica</a></li>
+                <li><a href="asia.html" class="text-decoration-none">Asia</a></li>
+                <li><a href="australia.html" class="text-decoration-none">Australia</a></li>
+                <li><a href="europe.html" class="text-decoration-none">Europe</a></li>
+                <li><a href="north.html" class="text-decoration-none">North America</a></li>
+                <li><a href="south.html" class="text-decoration-none">South America</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row" id="cardContainer"></div>
+    </div>
+
+    <script>
+        var countryData = {
+            Africa: [
+                { name: "Algeria", pic: "images/africa/dz.png" },
+                { name: "Egypt", pic: "images/africa/eg.png" },
+                { name: "Libya", pic: "images/africa/ly.png" },
+                { name: "Morocco", pic: "images/africa/ma.png" },
+                { name: "Sudan", pic: "images/africa/sd.png" },
+                { name: "Benin", pic: "images/africa/bj.png" },
+                { name: "Burkina Faso", pic: "images/africa/bf.png" },
+                { name: "Cape Verde", pic: "images/africa/cv.png" },
+                { name: "Ivory Coast", pic: "images/africa/ci.png" },
+                { name: "Gambia", pic: "images/africa/gm.png" },
+                { name: "Ghana", pic: "images/africa/gh.png" },
+                { name: "Guinea", pic: "images/africa/gn.png" },
+                { name: "Guinea-Bissau", pic: "images/africa/gw.png" },
+                { name: "Liberia", pic: "images/africa/lr.png" },
+                { name: "Mali", pic: "images/africa/ml.png" },
+                { name: "Niger", pic: "images/africa/ne.png" },
+                { name: "Nigeria", pic: "images/africa/ng.png" },
+                { name: "Senegal", pic: "images/africa/sn.png" },
+                { name: "Sierra Leone", pic: "images/africa/sl.png" },
+                { name: "Togo", pic: "images/africa/tg.png" },
+                { name: "Angola", pic: "images/africa/ao.png" },
+                { name: "Cameroon", pic: "images/africa/cm.png" },
+                { name: "Central African Republic", pic: "images/africa/cf.png" },
+                { name: "Chad", pic: "images/africa/td.png" },
+                { name: "Republic of the Congo", pic: "images/africa/cg.png" },
+                { name: "Democratic Republic of the Congo", pic: "images/africa/cd.png" },
+                { name: "Equatorial Guinea", pic: "images/africa/gq.png" },
+                { name: "Gabon", pic: "images/africa/ga.png" },
+                { name: "São Tomé and Príncipe", pic: "images/africa/st.png" },
+                { name: "Burundi", pic: "images/africa/bi.png" },
+                { name: "Djibouti", pic: "images/africa/dj.png" },
+                { name: "Eritrea", pic: "images/africa/er.png" },
+                { name: "Ethiopia", pic: "images/africa/et.png" },
+                { name: "Kenya", pic: "images/africa/ke.png" },
+                { name: "Rwanda", pic: "images/africa/rw.png" },
+                { name: "Seychelles", pic: "images/africa/sc.png" },
+                { name: "Somalia", pic: "images/africa/so.png" },
+                { name: "South Sudan", pic: "images/africa/ss.png" },
+                { name: "Tanzania", pic: "images/africa/tz.png" },
+                { name: "Uganda", pic: "images/africa/ug.png" },
+                { name: "Madagascar", pic: "images/africa/mg.png" },
+                { name: "Mozambique", pic: "images/africa/mz.png" },
+                { name: "Comoros", pic: "images/africa/km.png" },
+                { name: "Botswana", pic: "images/africa/bw.png" },
+                { name: "Eswatini (Swaziland)", pic: "images/africa/sz.png" },
+                { name: "Lesotho", pic: "images/africa/ls.png" },
+                { name: "Namibia", pic: "images/africa/na.png" },
+                { name: "South Africa", pic: "images/africa/za.png" },
+                { name: "Zambia", pic: "images/africa/zm.png" },
+                { name: "Zimbabwe", pic: "images/africa/zw.png" },
+                { name: "Western Sahara", pic: "images/africa/eh.png" },
+                { name: "Mayotte", pic: "images/africa/yt.png" },
+                { name: "Réunion", pic: "images/africa/re.png" }
+            ],
+        };
+
+        function displayCountries() {
+            var myContainer = document.getElementById("cardContainer");
+            myContainer.innerHTML = "";
+            for (let i = 0; i < countryData.Africa.length; i++) {
+                var country = countryData.Africa[i];
+                myContainer.innerHTML += `
+                    <div class="col-md-3 col-sm-6 col-12 mb-4">
+                        <div class="card rouded-4 my-3" id="c${i}" 
+                            onmouseenter="addShadow('c${i}')" 
+                            onmouseleave="removeShadow('c${i}')">
+                            <img src="${country.pic}" class="card-img-top" alt="${country.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${country.name}</h5>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        function addShadow(id) {
+            document.getElementById(id).classList.add("shadow");
+        }
+
+        function removeShadow(id) {
+            document.getElementById(id).classList.remove("shadow");
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            // Check if sidebar exists before trying to toggle
+            if (sidebar) {
+                sidebar.classList.toggle("active");
+            }
+        }
+
+
+
+        var colorMode = "light";
+
+        function changeMode() {
+            var bodyElement = document.getElementById("body");
+            var modeButton = document.getElementById("modeButton");
+
+            if (colorMode === "dark") {
+                colorMode = "light";
+                modeButton.textContent = "Dark";
+            } else {
+                colorMode = "dark";
+                modeButton.textContent = "Light";
+            }
+
+            bodyElement.setAttribute("data-bs-theme", colorMode);
+        }
+
+        displayCountries();
+    </script>
+
+    <footer class="text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <p class="mb-0">&copy; 2024 World Atlas. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>

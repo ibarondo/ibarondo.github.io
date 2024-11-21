@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clash of Clans</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/parallax.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="icon" href="assets/icon.png">
+</head>
+
+<body>
+
+	<body>
+		<section>
+			<div class="keyart" id="parallax">
+				<div class="keyart_layer parallax" id="keyart-0" data-speed="10"></div>
+				<div class="keyart_layer parallax" id="keyart-1" data-speed="50"></div>
+				<div class="keyart_layer parallax" id="keyart-2" data-speed="-30"></div>
+				<div class="keyart_layer parallax" id="keyart-3" data-speed="110"></div>
+				<div class="keyart_layer parallax" id="keyart-4" data-speed="-4"></div>
+				<div class="keyart_layer parallax" id="keyart-5" data-speed="80"></div>
+				<div class="keyart_layer parallax" id="keyart-6" data-speed="30"></div>
+				<div class="keyart_layer parallax" id="keyart-7" data-speed="-80"></div>
+				<div class="keyart_layer parallax" id="keyart-8" data-speed="90"></div>
+				<div class="keyart_layer" id="keyart-9" data-speed="100"></div>
+				<!--Front image, in sync with scroll, no need to parallax-->
+				<!--Add or Remove layers as needed - check Parallax.css for refrence-->
+			</div>
+		</section>
+
+		<section class="main-content container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 px-5">
+					<img src="assets/coc/image.png" class="intro-bg" alt="">
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 px-5">
+					<h1>LEAD YOUR CLAN TO VICTORY!</h1>
+					<p>
+						Answer the call of the mustache! Join the international fray that is Clash of Clans. Customize
+						your village, build an army and crush your opponents. Like using friendship to strike fear into
+						your enemies? Join a Clan, or establish a Clashing legacy by creating your own. The choice is
+						yours in this millions-strong community of Barbarians. Download for free and Clash on, Chief!
+					</p>
+				</div>
+			</div>
+			
+			<div class="news-row">
+				<h1 id="troops">TROOPS</h1>
+				<div class="container mt-4">
+					<div class="row" id="troopsContainer"></div>
+				</div>
+			
+				<h1 id="heroes">HEROES</h1>
+				<div class="container mt-4">
+					<div class="row" id="heroesContainer"></div>
+				</div>
+
+				<h1 id="siege-machines">SIEGE MACHINES</h1>
+				<div class="container mt-4">
+					<div class="row" id="siegeContainer"></div>
+				</div>
+
+				<h1 id="spells">SPELLS</h1>
+				<div class="container mt-4">
+					<div class="row" id="spellContainer"></div>
+				</div>
+
+				<h1 id="town-halls">TOWN HALLS</h1>
+				<div class="container mt-4">
+					<div class="row" id="thContainer"></div>
+				</div>
+
+				<h1 id="builder-halls">BUILDER HALLS</h1>
+				<div class="container mt-4">
+					<div class="row" id="bhContainer"></div>
+				</div>
+			</div>
+		</section>
+
+		<!--Uses JQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/parallax.js"></script>
+		<script src="js/coc.js"></script>
+	</body>
+
+</html>

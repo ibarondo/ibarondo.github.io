@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>North America</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/globe.ico">
+
+</head>
+
+<body id="body" data-bs-theme="light">
+    <nav class="navbar bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <div class="row w-100">
+                <div class="col-6 d-flex align-items-center">
+                    <a class="navbar-brand d-flex align-items-center" href="gallery.html">
+                        <img src="images/globe.png" alt="Logo" width="40" height="40"
+                            class="d-inline-block align-text-top">
+                        <span class="ms-2" style="line-height: 1.2;"><b>North America</b></span>
+                    </a>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <!-- <form class="d-flex mb-2 mb-md-0" role="search">
+                        <div class="input-group" style="max-width: 300px;">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success ms-2" type="submit">Search</button>
+                        </div>
+                    </form> -->
+                    <button class="btn btn-outline-secondary ms-2" onclick="toggleSidebar()">Continents</button>
+                    <button class="btn btn-outline-secondary ms-2" id="modeButton" onclick="changeMode()"
+                        type="submit">Dark</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <div class="p-3">
+            <ul class="list-unstyled">
+                <li><a href="africa.html" class="text-decoration-none">Africa</a></li>
+                <li><a href="antarctica.html" class="text-decoration-none">Antarctica</a></li>
+                <li><a href="asia.html" class="text-decoration-none">Asia</a></li>
+                <li><a href="australia.html" class="text-decoration-none">Australia</a></li>
+                <li><a href="europe.html" class="text-decoration-none">Europe</a></li>
+                <li><a href="south.html" class="text-decoration-none">South America</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row" id="cardContainer"></div>
+    </div>
+
+    <script>
+        var countryData = {
+            NorthAmerica: [
+                { name: "Antigua and Barbuda", pic: "images/northamerica/ag.png" },
+                { name: "Bahamas", pic: "images/northamerica/bs.png" },
+                { name: "Barbados", pic: "images/northamerica/bb.png" },
+                { name: "Belize", pic: "images/northamerica/bz.png" },
+                { name: "Canada", pic: "images/northamerica/ca.png" },
+                { name: "Costa Rica", pic: "images/northamerica/cr.png" },
+                { name: "Cuba", pic: "images/northamerica/cu.png" },
+                { name: "Dominica", pic: "images/northamerica/dm.png" },
+                { name: "Dominican Republic", pic: "images/northamerica/do.png" },
+                { name: "El Salvador", pic: "images/northamerica/sv.png" },
+                { name: "Grenada", pic: "images/northamerica/gd.png" },
+                { name: "Guatemala", pic: "images/northamerica/gt.png" },
+                { name: "Haiti", pic: "images/northamerica/ht.png" },
+                { name: "Honduras", pic: "images/northamerica/hn.png" },
+                { name: "Jamaica", pic: "images/northamerica/jm.png" },
+                { name: "Mexico", pic: "images/northamerica/mx.png" },
+                { name: "Nicaragua", pic: "images/northamerica/ni.png" },
+                { name: "Panama", pic: "images/northamerica/pa.png" },
+                { name: "Saint Kitts and Nevis", pic: "images/northamerica/kn.png" },
+                { name: "Saint Lucia", pic: "images/northamerica/lc.png" },
+                { name: "Saint Vincent and the Grenadines", pic: "images/northamerica/vc.png" },
+                { name: "Trinidad and Tobago", pic: "images/northamerica/tt.png" },
+                { name: "United States of America", pic: "images/northamerica/us.png" }
+            ],
+
+        };
+
+        function displayCountries() {
+            var myContainer = document.getElementById("cardContainer");
+            myContainer.innerHTML = "";
+            for (let i = 0; i < countryData.NorthAmerica.length; i++) {
+                var country = countryData.NorthAmerica[i];
+                myContainer.innerHTML += `
+                    <div class="col-md-3 col-sm-6 col-12 mb-4">
+                        <div class="card rounded-4 my-3" id="c${i}" 
+                            onmouseenter="addShadow('c${i}')" 
+                            onmouseleave="removeShadow('c${i}')">
+                            <img src="${country.pic}" class="card-img-top" alt="${country.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${country.name}</h5>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        function addShadow(id) {
+            document.getElementById(id).classList.add("shadow");
+        }
+
+        function removeShadow(id) {
+            document.getElementById(id).classList.remove("shadow");
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            sidebar.classList.toggle("active");
+            content.classList.toggle("shrink");
+        }
+
+        var colorMode = "light";
+
+        function changeMode() {
+            var bodyElement = document.getElementById("body");
+            var modeButton = document.getElementById("modeButton");
+
+            if (colorMode === "dark") {
+                colorMode = "light";
+                modeButton.textContent = "Dark";
+            } else {
+                colorMode = "dark";
+                modeButton.textContent = "Light";
+            }
+
+            bodyElement.setAttribute("data-bs-theme", colorMode);
+        }
+
+        displayCountries();
+    </script>
+
+    <footer class="text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <p class="mb-0">&copy; 2024 World Atlas. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>
