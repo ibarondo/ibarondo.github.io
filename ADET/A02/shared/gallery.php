@@ -2,9 +2,9 @@
     <span>Galleries</span>
 </div>
 
-<div class="conatiner-fluid">
-    <div class="row-gallery mb-4">
-        <div class="column">
+<div class="conatiner-fluid p-3">
+    <div class="row row-gallery mb-4">
+        <div class="col column">
             <img src="assets/images/gallery/39.jpg" class="gallery-img">
             <img src="assets/images/gallery/13.jpg" class="img-fluid">
             <img src="assets/images/gallery/21.jpg" class="img-fluid">
@@ -21,7 +21,7 @@
             <img src="assets/images/gallery/36.jpg" class="img-fluid">
             <img src="assets/images/gallery/8.jpg" class="img-fluid">
         </div>
-        <div class="column">
+        <div class="col column">
             <img src="assets/images/gallery/9.jpg" class="img-fluid">
             <img src="assets/images/gallery/22.jpg" class="img-fluid">
             <img src="assets/images/gallery/18.jpg" class="img-fluid">
@@ -39,7 +39,7 @@
             <img src="assets/images/gallery/14.jpg" class="img-fluid">
             
         </div>
-        <div class="column">
+        <div class="col column">
             <img src="assets/images/gallery/44.jpg" class="img-fluid">
             <img src="assets/images/gallery/1.jpg" class="img-fluid">
             <img src="assets/images/gallery/15.jpg" class="img-fluid">
