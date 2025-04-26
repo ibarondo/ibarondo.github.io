@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
+:root {
+    --primary-color: #FAF3EB;
+    --secondary-color: #000000;
+    --tertiary-color: #F482A3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar */
+/* .navbar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 0 10px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.icon-pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+}
+
+.icon-pages a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 30px;
+} */
+
+/* cards */
+.cards {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.cards a {
+    text-decoration: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 354px;
+    height: 401px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px var(--secondary-color), -4px -4px 4px var(--tertiary-color);
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.card img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    color: var(--secondary-color);
+    letter-spacing: 3px;
+
+}
+
+@media screen and (max-width: 576px) {
+    .cards {
+        margin-top: 70px; 
+        margin-bottom: 70px;
+    }
+    
+}

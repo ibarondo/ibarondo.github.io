@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
+:root {
+    --project-color: #78BEA2;
+    --hello-color: #F4AC65;
+    --educ-color: #A6979B;
+    --cv-color: #FFF5DF;
+    --aboutMe-color: #F482A3;
+    --quote-color: #FFFDFD;
+    --socials-color: #C7A4D5;
+    --skills-color: #02BAD4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 0 10px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.icon-pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+}
+
+.icon-pages a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+/* card styles */
+.card {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 5px;
+    box-shadow: 2px 2px 2px black;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+/* card project */
+.card.card-project {
+    background-color: lightblue;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+}
+
+/* card hello */
+.card.card-hello {
+    height: 210px;
+    background-color: var(--hello-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hello  img {
+    width: 95%;
+    height: 95%;
+}
+
+/* card edu */
+.card.card-educ {
+    position: relative;
+    height: 210px;
+    background-color: var(--educ-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.educ {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.educ  img {
+    width: 80%;
+    height: auto;
+}
+
+/* card cv */
+.card.card-cv {
+    background-color: var(--cv-color);
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cv {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv img {
+    width: 90%;
+    height: auto;
+}   
+
+/* card aboutMe */
+.card.card-aboutMe-overlay {
+    position: relative;
+    height: 210px;
+    background-color: var(--aboutMe-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-aboutMe-overlay img {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.aboutMe {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.aboutMe h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: black;
+    font-size: 40px;
+    margin: 0;
+}
+
+.aboutMe p {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: black;
+    font-size: 25px;
+    margin: 0;
+}
+
+/* card quote */
+.card.card-quote {
+    height: 210px;
+    background-color: var(--quote-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* card socials */
+.card.card-socials, .card.card-skills {
+    height: 138px;
+    background-color: var(--socials-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.socials img {
+    width: 50px;
+    height: 50px;
+}
+
+/* card skills */
+.card.card-skills {
+    height: 138px;
+    background-color: var(--skills-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills i {
+    font-size: 50px;
+    color: black;
+}
+
+@media screen and (max-width: 576px) {
+    .hello  img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .educ  img {
+        width: 90%;
+        height: auto;
+    }
+
+    .cv {
+        right: auto;
+    }
+
+    .socials {
+        gap: 10px;
+    }
+
+    .socials img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .skills i {
+        font-size: 25px;
+    }
+}
