@@ -68,7 +68,6 @@
 
 /* card project */
 .card.card-project {
-    background-color: lightblue;
     height: 430px;
     display: flex;
     justify-content: center;
