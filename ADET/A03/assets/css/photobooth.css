@@ -58,19 +58,39 @@ html {
     margin: 0 auto;
 }
 
+video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+/* camera button */
 .camera-button {
     position: absolute;
-    bottom: 65px;
+    bottom: 52px;
     left: 50%;
     transform: translateX(-50%);
     background: none;
     border: transparent;
     padding: 0;
     z-index: 2;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--tertiary-color),
+        var(--secondary-color)
+    );
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.camera-button img {
-    width: 30%;
+.camera-button i {
+    font-size: 60px;
+    color: white;
+    border-radius: 100%;
 }
 
 /* photo strip */
@@ -115,7 +135,7 @@ html {
     justify-content: center;
     background-color: white;
     border: 1px solid #ccc;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* .card-date {
@@ -136,12 +156,6 @@ html {
     gap: 10px;
 }
 
-.save:hover,
-.retake:hover {
-    box-shadow: 4px 4px 4px var(--tertiary-color), -4px -4px 4px var(--secondary-color);
-
-}
-
 .buttons span {
     font-size: 15px;
     font-weight: 700;
@@ -149,17 +163,27 @@ html {
 
 .save,
 .retake {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background: none;
     border: transparent;
-    bottom: 10px;
+    bottom: 20px;
     padding: 5px 24px;
     width: 150px;
     border: 1px solid black;
     border-radius: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: var(--primary-color);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+
+.save:hover,
+.retake:hover {
+    box-shadow: 4px 4px 4px var(--tertiary-color), -4px -4px 4px var(--secondary-color);
+
 }
 
 /* media queries */
@@ -178,10 +202,9 @@ html {
     }
 
     .camera-button {
-        bottom: -15px;
+        bottom: -32px;
     }
 }
-
 @media (max-width: 768px) {
     .header {
         margin-top: 50px;
@@ -193,7 +216,7 @@ html {
     }
 
     .camera-button {
-        bottom: -15px;
+        bottom: -32px;
     }
 }
 
@@ -208,6 +231,6 @@ html {
     }
 
     .camera-button {
-        bottom: -15px;
+        bottom: -32px;
     }
 }

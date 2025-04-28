@@ -27,19 +27,39 @@ navigator.mediaDevices.getUserMedia({
 
 // capture image
 captureBtn.addEventListener("click", function () {
-
     var canvas = document.createElement("canvas");
     var context = canvas.getContext("2d");
 
     canvas.width = 207;
     canvas.height = 170;
 
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    var imageData = canvas.toDataURL("image/png");
+    const targetAspectRatio = 207 / 170;
+    const videoWidth = video.videoWidth;
+    const videoHeight = video.videoHeight;
+    const videoAspectRatio = videoWidth / videoHeight;
 
-    // const now = new Date();
-    // const formattedDate = formatDate(now);
-    // dateCapture.textContent = formattedDate;
+    let sx, sy, sWidth, sHeight;
+
+    if (videoAspectRatio > targetAspectRatio) {
+        // Video is wider than target aspect
+        sHeight = videoHeight;
+        sWidth = sHeight * targetAspectRatio;
+        sx = (videoWidth - sWidth) / 2;
+        sy = 0;
+    } else {
+        // Video is taller than target aspect
+        sWidth = videoWidth;
+        sHeight = sWidth / targetAspectRatio;
+        sx = 0;
+        sy = (videoHeight - sHeight) / 2;
+    }
+
+    context.translate(canvas.width, 0);
+    context.scale(-1, 1);
+
+    context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
+
+    var imageData = canvas.toDataURL("image/png");
 
     if (capturedPhotos.length < 3) {
         capturedPhotos.push(imageData);
@@ -50,8 +70,7 @@ captureBtn.addEventListener("click", function () {
         var imgElement = document.createElement("img");
         imgElement.src = imageData;
         imgElement.style.width = "100%";
-        imgElement.style.height = "100%";
-        imgElement.style.objectFit = "cover";
+        imgElement.style.objectFit = "contain";
 
         photo.appendChild(imgElement);
 
@@ -62,6 +81,8 @@ captureBtn.addEventListener("click", function () {
         }
     }
 });
+
+
 
 // retake image 
 retakeBtn.addEventListener("click", function () {
