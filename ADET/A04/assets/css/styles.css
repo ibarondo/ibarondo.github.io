@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+/* categories */
+.category-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    height: 15dvh;
+}
+
+.card-categories {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 20px;
+    width: fit-content;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.card-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 190px;
+    border: 1px solid black;
+    border-radius: 100px;
+    padding: 0 10px;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0.1);
+}
+
+.card-icon span {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 19px;
+}
+
+/* products */
+.product-container {
+    height: 85dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.card-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 250px;
+    height: 380px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-item img {
+    border-radius: 10px;
+}
+
+.card-label {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.card-label .name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.card-label .price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+/* receipt */
+.headings {
+    padding: 10px;
+}
+
+.headings h3 {
+    font-weight: 700;
+}
+
+.receipt {
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px 10px 10px 10px;
+    height: 60dvh;
+}
+
+.card-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* payment summary */
+.sumary-container {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+    border-top: 1px dashed rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+.sumary-container h5 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tax {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.subtotal span,
+.tax span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.total-payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 6px 20px 6px;
+    background-color: #71C9F9;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0.1);
+}
+
+.total-payment {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
