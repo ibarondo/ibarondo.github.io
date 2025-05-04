@@ -298,39 +298,39 @@ var products = [
                 "image": "aj2.png"
             },
             {
-                "name": "Embroidered Baseball Cap",
+                "name": "Gold Strap Quartz Watch",
                 "code": "AC003",
                 "price": "199",
                 "image": "aj3.png"
             },
             {
-                "name": "Shaped Plastic Hair Clips",
+                "name": "Embroidered Baseball Cap ",
                 "code": "AC004",
                 "price": "89",
                 "image": "aj4.png"
             },
             {
-                "name": "Cherry Charm Necklace",
+                "name": "Shaped Plastic Hair Clips ",
                 "code": "AC005",
-                "price": "179",
+                "price": "119",
                 "image": "aj5.png"
             },
             {
-                "name": "Fashionable Ring Set",
+                "name": "Cherry Charm Necklace ",
                 "code": "AC006",
-                "price": "149",
+                "price": "129",
                 "image": "aj6.png"
             },
             {
-                "name": "Retro Leather Headband",
+                "name": "Fashionable Ring Set",
                 "code": "AC007",
-                "price": "119",
+                "price": "99",
                 "image": "aj7.png"
             },
             {
-                "name": "Gold Strap Quartz Watch",
+                "name": "Retro Leather Headband",
                 "code": "AC008",
-                "price": "399",
+                "price": "79",
                 "image": "aj8.png"
             }
         ]
