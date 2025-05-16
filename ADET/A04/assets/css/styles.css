@@ -21,7 +21,7 @@ html {
 }
 
 .headings-logo img {
-    max-width: 70%;
+    width: 70%;
     height: auto;
 }
 
@@ -239,3 +239,15 @@ html {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
+
+@media screen and (max-width: 576px) {
+    .headings-logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .headings-logo {
+        padding: 5px;
+    }
+}
+
