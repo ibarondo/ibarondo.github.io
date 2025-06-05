@@ -122,6 +122,8 @@ function showErrorImage(city = '') {
     temperatureValue.innerHTML = '';
     humidityValue.innerHTML = '';
     windValue.innerHTML = '';
+    headerInfo.innerHTML = `<h2 class="title mb-1 d-none d-xl-block">Weather</h2>
+                            <h4 class="current-date mb-1 mt-xl-0 mt-4">`+ getCurrentDate() +`</h4>`;
     forecastContainer.innerHTML = `
         <div class="d-flex flex-column align-items-center justify-content-center w-100" style="min-height: 400px;">
             <i class='bx bx-search-alt' style="font-size: 180px; opacity: 0.7;"></i>
