@@ -2,7 +2,7 @@ const cityInput = document.getElementById('city-input')
 const searchBtn = document.getElementById('search-btn')
 
 // weather
-const headerInfo = document.getElementById('header-info');
+const headerInfo = document.getElementById('header-info')
 const currentDate = document.getElementById('current-date');
 const conditionValue = document.getElementById('condition');
 const cityName = document.getElementById('city')
