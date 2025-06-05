@@ -2,12 +2,10 @@ const cityInput = document.getElementById('city-input')
 const searchBtn = document.getElementById('search-btn')
 
 // weather
-// const currentDate = document.getElementById('current-date')
-// const conditionValue = document.getElementById('condition')
-
-const headerInfo = document.getElementById('header-info')
+const headerInfo = document.getElementById('header-info');
+const currentDate = document.getElementById('current-date');
+const conditionValue = document.getElementById('condition');
 const cityName = document.getElementById('city')
-const tempValue = document.getElementById('temp-value')
 const humidityValue = document.getElementById('humidity')
 const windValue = document.getElementById('wind')
 const conditionImg = document.getElementById('condition-img')
@@ -15,7 +13,7 @@ const temperatureValue = document.getElementById('temperature-value')
 const forecastContainer = document.getElementById('forecast-container')
 
 
-const APIKey = 'f98839d09cbc65159759aac755d5eaa3'
+const APIKey = 'de863ac984adfee2df49a6869122353b'
 
 searchBtn.addEventListener('click', () => {
     if (cityInput.value.trim() != '') {
@@ -56,6 +54,7 @@ function updateWeatherForecast(city) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + ',PH&appid=' + APIKey + '&units=metric')
         .then(res => res.json())
         .then(weatherData => {
+            console.log(weatherData);
 
             if (weatherData.cod !== '200') {
                 showErrorImage(city);
@@ -71,15 +70,19 @@ function updateWeatherForecast(city) {
             const weatherID = weatherData.list[0].weather[0].id;
             const iconFile = getWeatherIcon(weatherID);
 
-            headerInfo.innerHTML += `<h2 class="title mb-1 d-none d-xl-block">Weather</h2>
-                            <h4 class="current-date mb-1 mt-xl-0 mt-4">`+ getCurrentDate() +`</h4>
-                            <h4 class="condition mb-3 mb-xl-0">` +  weatherData.list[0].weather[0].main + `</h4>`;
+            // currentDate.textContent = getCurrentDate();
+            // conditionValue.textContent = weatherData.list[0].weather[0].main;
 
-            cityName.innerHTML += `<i class='bx bx-map-pin me-3' style="font-size: 30px; line-height: 1;"></i>
+            headerInfo.innerHTML = `<h2 class="title mb-1 d-none d-xl-block">Weather</h2>
+                            <h4 class="current-date mb-1 mt-xl-0 mt-4">`+ getCurrentDate() +`</h4>
+                            <h4 class="condition mb-3 mb-xl-0"> `+  weatherData.list[0].weather[0].main +` </h4>`;
+
+    
+            cityName.innerHTML = `<i class='bx bx-map-pin me-3' style="font-size: 30px; line-height: 1;"></i>
                             <h2 class="city m-0" style="line-height: 1;">`+ weatherData.city.name + `</h2>`
 
 
-            temperatureValue.innerHTML += `<img src="assets/weather/` + iconFile + `" alt="" class="img-fluid pe-xl-4"
+            temperatureValue.innerHTML = `<img src="assets/weather/` + iconFile + `" alt="" class="img-fluid pe-xl-4"
                                 style="width: 140px;">
                             <div
                                 class="temp d-flex flex-row align-items-start align-items-xl-start justify-content-center justify-content-xl-start">
@@ -89,12 +92,12 @@ function updateWeatherForecast(city) {
                                     °C</h5>
                             </div>`;
 
-            humidityValue.innerHTML += `<i class='bx bx-droplet me-3' style="font-size: 36px;"></i>
+            humidityValue.innerHTML = `<i class='bx bx-droplet me-3' style="font-size: 36px;"></i>
                             <h4 style="margin: 0; line-height: 1;">Humidity:
                                 <span>`+ weatherData.list[0].main.humidity + `%</span>
                             </h4>`;
 
-            windValue.innerHTML += ` <i class='bx bx-wind  me-3' style="font-size: 36px;"></i>
+            windValue.innerHTML = ` <i class='bx bx-wind  me-3' style="font-size: 36px;"></i>
                             <h4 class="wind" style="margin: 0; line-height: 1;">Wind: <span>`+ weatherData.list[0].wind.speed + ` km/h</span></h4>`;
 
             
@@ -123,19 +126,15 @@ function updateWeatherForecast(city) {
 function showErrorImage(city = '') {
     cityName.innerHTML = '';
     temperatureValue.innerHTML = '';
-    conditionValue.innerHTML = '';
     humidityValue.innerHTML = '';
     windValue.innerHTML = '';
-    currentDate.textContent = getCurrentDate();
     forecastContainer.innerHTML = `
-    <div class="d-flex flex-column align-items-center justify-content-center w-100" style="min-height: 400px;">
-        <i class='bx bx-search-alt' style="font-size: 180px; opacity: 0.7;"></i>
-        <p class="text-center mt-3 text-light">No forecast data found for "<strong>${city}</strong>".</p>
-    </div>
-`;
-
+        <div class="d-flex flex-column align-items-center justify-content-center w-100" style="min-height: 400px;">
+            <i class='bx bx-search-alt' style="font-size: 180px; opacity: 0.7;"></i>
+            <p class="text-center mt-3 text-light">No forecast data found for "<strong>`+ city +`</strong>".</p>
+        </div>
+    `;
 }
-
 
 
 updateWeatherForecast('Batangas');
