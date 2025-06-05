@@ -3,12 +3,9 @@ const searchBtn = document.getElementById('search-btn')
 
 // weather
 const headerInfo = document.getElementById('header-info')
-const currentDate = document.getElementById('current-date');
-const conditionValue = document.getElementById('condition');
 const cityName = document.getElementById('city')
 const humidityValue = document.getElementById('humidity')
 const windValue = document.getElementById('wind')
-const conditionImg = document.getElementById('condition-img')
 const temperatureValue = document.getElementById('temperature-value')
 const forecastContainer = document.getElementById('forecast-container')
 
@@ -69,9 +66,6 @@ function updateWeatherForecast(city) {
             // weather icon
             const weatherID = weatherData.list[0].weather[0].id;
             const iconFile = getWeatherIcon(weatherID);
-
-            // currentDate.textContent = getCurrentDate();
-            // conditionValue.textContent = weatherData.list[0].weather[0].main;
 
             headerInfo.innerHTML = `<h2 class="title mb-1 d-none d-xl-block">Weather</h2>
                             <h4 class="current-date mb-1 mt-xl-0 mt-4">`+ getCurrentDate() +`</h4>
